@@ -9,14 +9,18 @@ st.set_page_config(page_title="JSON to PDF/DOCX Converter", layout="centered")
 st.markdown("""
 <style>
 .main {
-    background-color: #f5f5dc;  /* beige */
+    background-color: #f5f5dc;  /* beige background */
     color: #333333;
     font-family: "Helvetica Neue", sans-serif;
 }
+
+/* Headings */
 h1, h2, h3 {
     color: #3e3e3e;
     font-weight: 600;
 }
+
+/* Inputs & general widgets */
 .stTextInput > div > div > input,
 .stTextArea textarea,
 .stSelectbox > div > div,
@@ -27,31 +31,37 @@ h1, h2, h3 {
     box-shadow: 2px 2px 6px rgba(0,0,0,0.1);
     background-color: #fffaf0;
 }
+
+/* Primary buttons (Render Document, Download) */
 .stButton > button,
 .stDownloadButton > button {
-    background-color: #f5deb3;
-    color: #333333;
-    font-weight: 600;
-    border-radius: 12px;
-    border: none;
-    padding: 0.6em 1.2em;
-    box-shadow: 2px 2px 6px rgba(0,0,0,0.15);
+    background-color: #f5deb3 !important;  /* beige */
+    color: #333333 !important;
+    font-weight: 600 !important;
+    border-radius: 12px !important;
+    border: none !important;
+    padding: 0.6em 1.2em !important;
+    box-shadow: 2px 2px 6px rgba(0,0,0,0.15) !important;
     transition: 0.2s all;
 }
 .stButton > button:hover,
 .stDownloadButton > button:hover {
-    background-color: #e6c98b;
-    color: #222222;
+    background-color: #e6c98b !important;
+    color: #222222 !important;
     transform: translateY(-2px);
 }
-.stFileUploader label {
-    background-color: #f5deb3 !important;
-    border-radius: 12px;
-    padding: 0.4em 0.8em;
-    box-shadow: 2px 2px 6px rgba(0,0,0,0.15);
+
+/* File uploader Browse button */
+.stFileUploader label div[data-testid="stFileUploaderDropzone"] div div {
+    background-color: #f5deb3 !important;  /* beige */
+    color: #333333 !important;
+    border-radius: 12px !important;
+    box-shadow: 2px 2px 6px rgba(0,0,0,0.15) !important;
+    font-weight: 600 !important;
 }
-.stFileUploader label:hover {
+.stFileUploader label div[data-testid="stFileUploaderDropzone"] div div:hover {
     background-color: #e6c98b !important;
+    color: #222222 !important;
 }
 </style>
 """, unsafe_allow_html=True)
