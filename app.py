@@ -8,72 +8,59 @@ st.set_page_config(page_title="JSON to PDF/DOCX Converter", layout="centered")
 # ── Inject CSS theme ─────────────────────────────────────────
 st.markdown("""
 <style>
-/* General beige button style */
-button[kind="primary"],
-button[kind="secondary"],
-.stButton > button,
-.stDownloadButton > button {
-    background-color: #f5deb3 !important;
-    color: #333333 !important;
-    font-weight: 600 !important;
-    border-radius: 12px !important;
-    border: none !important;
-    padding: 0.6em 1.2em !important;
-    box-shadow: 2px 2px 6px rgba(0,0,0,0.15) !important;
-    transition: 0.2s all;
-}
-button[kind="primary"]:hover,
-button[kind="secondary"]:hover,
-.stButton > button:hover,
-.stDownloadButton > button:hover {
-    background-color: #e6c98b !important;
-    color: #222222 !important;
-    transform: translateY(-2px);
+:root{
+  --brown:#a06b1e;        /* primary brown */
+  --brown-hover:#7f5317;  /* hover */
+  --bg:#f2ede3;           /* soft background */
 }
 
-/* File uploader Browse button */
+/* Page background */
+.main { background-color: var(--bg); }
+
+/* Title in brown */
+h1 { color: var(--brown) !important; font-weight: 700 !important; }
+
+/* File uploader “Browse files” */
 [data-testid="stFileUploaderBrowseButton"] {
-    background-color: #f5deb3 !important;
-    color: #333333 !important;
-    font-weight: 600 !important;
-    border-radius: 12px !important;
-    border: none !important;
-    padding: 0.4em 1em !important;
-    box-shadow: 2px 2px 6px rgba(0,0,0,0.15) !important;
-    transition: 0.2s all;
+  background-color: var(--brown) !important;
+  color: #fff !important;
+  font-weight: 600 !important;
+  border-radius: 12px !important;
+  border: none !important;
+  padding: 0.45em 1em !important;
+  box-shadow: 2px 2px 6px rgba(0,0,0,0.15) !important;
 }
 [data-testid="stFileUploaderBrowseButton"]:hover {
-    background-color: #e6c98b !important;
-    color: #222222 !important;
-    transform: translateY(-2px);
+  background-color: var(--brown-hover) !important;
 }
 
-/* Form submit button (Render Document) */
-div.stForm button[type="submit"] {
-    background-color: #f5deb3 !important;
-    color: #333333 !important;
-    font-weight: 600 !important;
-    border-radius: 12px !important;
-    border: none !important;
-    padding: 0.6em 1.2em !important;
-    box-shadow: 2px 2px 6px rgba(0,0,0,0.15) !important;
-    transition: 0.2s all;
+/* Render Document (submit button in forms) */
+/* Cover both classic classes and new test IDs */
+div.stForm button[type="submit"],
+form [data-testid="baseButton-primary"],
+form [data-testid="baseButton-secondary"],
+.stButton > button,               /* fallback for non-form buttons */
+.stDownloadButton > button {       /* download button */
+  background-color: var(--brown) !important;
+  color: #fff !important;
+  font-weight: 600 !important;
+  border-radius: 12px !important;
+  border: none !important;
+  padding: 0.6em 1.2em !important;
+  box-shadow: 2px 2px 6px rgba(0,0,0,0.15) !important;
+  transition: 0.2s all;
 }
-div.stForm button[type="submit"]:hover {
-    background-color: #e6c98b !important;
-    color: #222222 !important;
-    transform: translateY(-2px);
-}
-
-/* Title in beige */
-h1 {
-    color: #f5deb3 !important;
-    font-weight: 700 !important;
+div.stForm button[type="submit"]:hover,
+form [data-testid="baseButton-primary"]:hover,
+form [data-testid="baseButton-secondary"]:hover,
+.stButton > button:hover,
+.stDownloadButton > button:hover {
+  background-color: var(--brown-hover) !important;
+  color: #fff !important;
+  transform: translateY(-2px);
 }
 </style>
 """, unsafe_allow_html=True)
-
-
 
 # ── UI ───────────────────────────────────────────────────────
 st.title("📄 JSON to PDF / DOCX Converter")
