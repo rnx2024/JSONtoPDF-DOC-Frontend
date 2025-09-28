@@ -3,7 +3,7 @@ import streamlit as st
 
 API_URL = st.secrets["API_URL"]
 
-st.set_page_config(page_title="JSON → PDF/DOCX", layout="centered")
+st.set_page_config(page_title="JSON to PDF/DOCX Converter", layout="centered")
 
 # ── Inject CSS theme ─────────────────────────────────────────
 st.markdown("""
