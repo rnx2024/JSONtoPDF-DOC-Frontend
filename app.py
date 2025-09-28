@@ -58,7 +58,7 @@ h1, h2, h3 {
 
 # ── UI ───────────────────────────────────────────────────────
 st.title("📄 JSON → PDF / DOCX")
-st.caption("Minimalist beige-themed frontend for your /render API")
+st.caption("Free JSON-to-PDF/DOCX Converter")
 
 with st.form("render_form"):
     output = st.selectbox("Output format", ["pdf", "docx"])
