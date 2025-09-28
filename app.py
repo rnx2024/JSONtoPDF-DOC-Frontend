@@ -8,40 +8,12 @@ st.set_page_config(page_title="JSON to PDF/DOCX Converter", layout="centered")
 # ── Inject CSS theme ─────────────────────────────────────────
 st.markdown("""
 <style>
-.main {
-    background-color: #f5f5dc;  /* beige background */
-    color: #333333;
-    font-family: "Helvetica Neue", sans-serif;
-}
-
-/* Title color beige */
-h1 {
-    color: #f5deb3 !important;
-    font-weight: 700 !important;
-}
-
-/* Subheadings */
-h2, h3 {
-    color: #3e3e3e;
-    font-weight: 600;
-}
-
-/* Inputs */
-.stTextInput > div > div > input,
-.stTextArea textarea,
-.stSelectbox > div > div,
-.stRadio > div,
-.stFileUploader > div > div {
-    border-radius: 12px !important;
-    border: 1px solid #d6cfc7;
-    box-shadow: 2px 2px 6px rgba(0,0,0,0.1);
-    background-color: #fffaf0;
-}
-
-/* Render + Download buttons */
+/* General beige button style */
+button[kind="primary"],
+button[kind="secondary"],
 .stButton > button,
 .stDownloadButton > button {
-    background-color: #f5deb3 !important;  /* beige */
+    background-color: #f5deb3 !important;
     color: #333333 !important;
     font-weight: 600 !important;
     border-radius: 12px !important;
@@ -50,6 +22,8 @@ h2, h3 {
     box-shadow: 2px 2px 6px rgba(0,0,0,0.15) !important;
     transition: 0.2s all;
 }
+button[kind="primary"]:hover,
+button[kind="secondary"]:hover,
 .stButton > button:hover,
 .stDownloadButton > button:hover {
     background-color: #e6c98b !important;
@@ -57,22 +31,31 @@ h2, h3 {
     transform: translateY(-2px);
 }
 
-/* Browse (File Uploader) button */
-.stFileUploader label div[data-testid="stFileUploaderDropzone"] div div {
-    background-color: #f5deb3 !important;  /* beige */
+/* File uploader Browse button */
+[data-testid="stFileUploaderBrowseButton"] {
+    background-color: #f5deb3 !important;
     color: #333333 !important;
-    border-radius: 12px !important;
-    box-shadow: 2px 2px 6px rgba(0,0,0,0.15) !important;
     font-weight: 600 !important;
-    text-align: center;
-    padding: 0.5em 0.8em;
+    border-radius: 12px !important;
+    border: none !important;
+    padding: 0.4em 1em !important;
+    box-shadow: 2px 2px 6px rgba(0,0,0,0.15) !important;
+    transition: 0.2s all;
 }
-.stFileUploader label div[data-testid="stFileUploaderDropzone"] div div:hover {
+[data-testid="stFileUploaderBrowseButton"]:hover {
     background-color: #e6c98b !important;
     color: #222222 !important;
+    transform: translateY(-2px);
+}
+
+/* Title in beige */
+h1 {
+    color: #f5deb3 !important;
+    font-weight: 700 !important;
 }
 </style>
 """, unsafe_allow_html=True)
+
 
 # ── UI ───────────────────────────────────────────────────────
 st.title("📄 JSON to PDF / DOCX Converter")
