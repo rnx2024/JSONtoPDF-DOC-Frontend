@@ -57,8 +57,8 @@ h1, h2, h3 {
 """, unsafe_allow_html=True)
 
 # ── UI ───────────────────────────────────────────────────────
-st.title("📄 JSON → PDF / DOCX")
-st.caption("Free JSON-to-PDF/DOCX Converter")
+st.title("📄 JSON to PDF / DOCX Converter")
+st.caption("Your Free Converter | Developed by Rhanny Urbis")
 
 with st.form("render_form"):
     output = st.selectbox("Output format", ["pdf", "docx"])
