@@ -14,13 +14,19 @@ st.markdown("""
     font-family: "Helvetica Neue", sans-serif;
 }
 
-/* Headings */
-h1, h2, h3 {
+/* Title color beige */
+h1 {
+    color: #f5deb3 !important;
+    font-weight: 700 !important;
+}
+
+/* Subheadings */
+h2, h3 {
     color: #3e3e3e;
     font-weight: 600;
 }
 
-/* Inputs & general widgets */
+/* Inputs */
 .stTextInput > div > div > input,
 .stTextArea textarea,
 .stSelectbox > div > div,
@@ -32,7 +38,7 @@ h1, h2, h3 {
     background-color: #fffaf0;
 }
 
-/* Primary buttons (Render Document, Download) */
+/* Render + Download buttons */
 .stButton > button,
 .stDownloadButton > button {
     background-color: #f5deb3 !important;  /* beige */
@@ -51,13 +57,15 @@ h1, h2, h3 {
     transform: translateY(-2px);
 }
 
-/* File uploader Browse button */
+/* Browse (File Uploader) button */
 .stFileUploader label div[data-testid="stFileUploaderDropzone"] div div {
     background-color: #f5deb3 !important;  /* beige */
     color: #333333 !important;
     border-radius: 12px !important;
     box-shadow: 2px 2px 6px rgba(0,0,0,0.15) !important;
     font-weight: 600 !important;
+    text-align: center;
+    padding: 0.5em 0.8em;
 }
 .stFileUploader label div[data-testid="stFileUploaderDropzone"] div div:hover {
     background-color: #e6c98b !important;
