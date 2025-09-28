@@ -48,6 +48,23 @@ button[kind="secondary"]:hover,
     transform: translateY(-2px);
 }
 
+/* Form submit button (Render Document) */
+div.stForm button[type="submit"] {
+    background-color: #f5deb3 !important;
+    color: #333333 !important;
+    font-weight: 600 !important;
+    border-radius: 12px !important;
+    border: none !important;
+    padding: 0.6em 1.2em !important;
+    box-shadow: 2px 2px 6px rgba(0,0,0,0.15) !important;
+    transition: 0.2s all;
+}
+div.stForm button[type="submit"]:hover {
+    background-color: #e6c98b !important;
+    color: #222222 !important;
+    transform: translateY(-2px);
+}
+
 /* Title in beige */
 h1 {
     color: #f5deb3 !important;
@@ -55,7 +72,6 @@ h1 {
 }
 </style>
 """, unsafe_allow_html=True)
-
 
 # ── UI ───────────────────────────────────────────────────────
 st.title("📄 JSON to PDF / DOCX Converter")
